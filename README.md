@@ -3,7 +3,7 @@
 This project implements a genetic programming algorithm to optimize a multi-objective function leading to ensure the sustainability of ML models.
 
 ## 🌟 Introduction
-Genetic programming (GP) is an evolutionary algorithm-based methodology inspired by biological evolution to find computer programs that perform a user-defined task. This project uses GP to evolve mathematical expressions that minimize three objectives:
+Genetic programming (GP) is an evolutionary algorithm-based methodology inspired by biological evolution to find computer programs that perform a user-defined task. This project uses GP to evolve mathematical expressions that optimize three objectives:
 1. Mean Squared Error (MSE) on a test dataset
 2. Simplicity of the solution
 3. Energy consumed
