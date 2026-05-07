@@ -21,6 +21,8 @@ def test_run_experiment_smoke() -> None:
     result = run_experiment(population_size=30, mu=20, lambda_=30, generations=1, verbose=False)
 
     assert len(result.fitness) == 3
+    assert np.isfinite(result.fitness).all()
     assert result.fitness[0] >= 1
     assert result.fitness[1] >= 0
     assert result.fitness[2] >= 0
+    assert result.fitness[2] < 10
