@@ -1,7 +1,5 @@
 # Sustainability of Machine Learning Models
 
-[![CI](https://github.com/jorge-martinez-gil/sustainability/actions/workflows/ci.yml/badge.svg)](https://github.com/jorge-martinez-gil/sustainability/actions/workflows/ci.yml)
-
 A research-oriented Python project for studying **sustainability-aware machine learning model design** using multi-objective genetic programming (GP). The optimization jointly targets:
 
 - **Prediction quality** (test MSE)
