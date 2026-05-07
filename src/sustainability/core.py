@@ -6,7 +6,6 @@ import operator
 import random
 import time
 from dataclasses import dataclass
-from functools import partial
 
 import numpy as np
 from deap import algorithms, base, creator, gp, tools
@@ -29,6 +28,11 @@ def safe_div(left: float, right: float) -> float:
         return left / right
     except ZeroDivisionError:
         return 1.0
+
+
+def random_ephemeral_constant() -> float:
+    """Generate ephemeral constants used by the GP primitives."""
+    return random.uniform(-1.0, 1.0)
 
 
 def make_example_dataset(
@@ -89,7 +93,7 @@ def setup_toolbox(dataset: ArrayPair, test_dataset: ArrayPair) -> base.Toolbox:
     pset.addPrimitive(operator.sub, 2)
     pset.addPrimitive(operator.mul, 2)
     pset.addPrimitive(safe_div, 2)
-    pset.addEphemeralConstant("rand", partial(random.uniform, -1.0, 1.0))
+    pset.addEphemeralConstant("rand", random_ephemeral_constant)
     pset.renameArguments(ARG0="x")
 
     toolbox = base.Toolbox()

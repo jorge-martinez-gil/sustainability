@@ -22,3 +22,5 @@ def test_run_experiment_smoke() -> None:
 
     assert len(result.fitness) == 3
     assert result.fitness[0] >= 1
+    assert result.fitness[1] >= 0
+    assert result.fitness[2] >= 0
