@@ -1,54 +1,90 @@
-# 🌱 Sustainability of Machine Learning Models
+# Sustainability of Machine Learning Models
 
-This repository provides an implementation of a **genetic programming algorithm** to optimize a **multi-objective function**, ensuring the sustainability of machine learning (ML) models. The rationale behind balancing **accuracy, interpretability, and energy efficiency** is to serve as example promoting responsible AI development.
+[![CI](https://github.com/jorge-martinez-gil/sustainability/actions/workflows/ci.yml/badge.svg)](https://github.com/jorge-martinez-gil/sustainability/actions/workflows/ci.yml)
 
-## 🚀 Overview
-Genetic Programming (GP) is an evolutionary algorithm inspired by **biological evolution**. It searches for mathematical expressions that optimize predefined objectives. This project applies GP to **evolve ML models** with a focus on three key aspects:
+A research-oriented Python project for studying **sustainability-aware machine learning model design** using multi-objective genetic programming (GP). The optimization jointly targets:
 
-1. **Prediction Accuracy** – Measured by Mean Squared Error (MSE) on a test dataset.
-2. **Model Simplicity** – Encouraging interpretable solutions.
-3. **Energy Efficiency** – Minimizing computational power consumption.
+- **Prediction quality** (test MSE)
+- **Model simplicity** (tree size)
+- **Computational energy proxy** (CPU processing time)
 
-This approach offers a **practical reference** for sustainable computing and can be adapted to various AI applications.
+## Motivation
 
-## 📥 Installation
-Ensure you have Python installed, then install the required dependencies using:
+Sustainable AI requires balancing predictive performance with computational efficiency and interpretability. This repository provides a compact but extensible baseline for experiments where these objectives conflict.
+
+## Installation
 
 ```bash
-pip install numpy deap scikit-learn
+python -m pip install -e .
 ```
 
-## 🔧 Usage
+For development (tests, linting, type checks):
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/jorge-martinez-gil/sustainability.git
-   cd sustainability
-   ```
-
-2. **Run the script:**
-   ```bash
-   python sustainability.py
-   ```
-
-The script will:
-- Load a sample dataset.
-- Split it into training and testing sets.
-- Execute the genetic programming algorithm.
-- Output the **best evolved models** with their respective performance scores (MSE, simplicity, and energy efficiency).
-
-This implementation provides a **foundation for further improvements**, such as refining the interpretability metric or improving energy consumption calculations.
-
-## 📚 Research & Related Work
-This project is based on research into **sustainable semantic similarity models**, integrating accuracy, interpretability, and energy efficiency.
-
-For more details, refer to:
-
+```bash
+python -m pip install -e .[dev]
 ```
+
+## Quickstart
+
+Run the default experiment:
+
+```bash
+python -m sustainability
+```
+
+Run with reduced settings for fast iteration:
+
+```bash
+python -m sustainability --generations 3 --population-size 60 --mu 40 --lambda 60 --quiet
+```
+
+## Reproducible workflow
+
+1. Create and activate a virtual environment.
+2. Install editable package with dev extras.
+3. Run quality checks:
+
+```bash
+ruff check .
+mypy src
+pytest
+```
+
+4. Execute a deterministic run using a fixed seed:
+
+```bash
+python -m sustainability --seed 42 --quiet
+```
+
+### Expected outputs
+
+The CLI prints:
+
+- Best evolved symbolic expression
+- Fitness tuple in the form `(simplicity, energy, test MSE)`
+
+Exact numeric values can vary across hardware because the energy objective uses CPU process time.
+
+## Project structure
+
+```text
+src/sustainability/      Python package and CLI
+examples/                Runnable examples
+tests/                   Automated tests
+.github/workflows/       CI automation
+```
+
+## Citation
+
+If you use this repository in academic work, please cite it using `CITATION.cff` metadata.
+
+BibTeX (related foundational article):
+
+```bibtex
 @article{martinez2022sustainable,
   title={Sustainable semantic similarity assessment},
   author={Martinez-Gil, Jorge and Chaves-Gonzalez, Jose Manuel},
-  journal={Journal of Intelligent & Fuzzy Systems},
+  journal={Journal of Intelligent \& Fuzzy Systems},
   volume={43},
   number={5},
   pages={6163--6174},
@@ -57,5 +93,12 @@ For more details, refer to:
 }
 ```
 
-## 📄 License
-This project is licensed under the **MIT License**. See the LICENSE file for details.
+## Roadmap
+
+- Expand sustainability metrics beyond CPU time proxy
+- Add benchmark datasets and experiment tracking
+- Provide visualization notebooks for Pareto-front analysis
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
