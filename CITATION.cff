@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Sustainability of Machine Learning Models"
+message: "If you use this software, please cite it as follows."
+type: software
+authors:
+  - family-names: "Martinez-Gil"
+    given-names: "Jorge"
+repository-code: "https://github.com/jorge-martinez-gil/sustainability"
+url: "https://github.com/jorge-martinez-gil/sustainability"
+license: "MIT"
+version: "0.1.0"
+date-released: "2026-05-07"
+keywords:
+  - sustainability
+  - machine learning
+  - genetic programming
+  - multi-objective optimization
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Martinez-Gil"
+      given-names: "Jorge"
+    - family-names: "Chaves-Gonzalez"
+      given-names: "Jose Manuel"
+  title: "Sustainable semantic similarity assessment"
+  journal: "Journal of Intelligent & Fuzzy Systems"
+  year: 2022
+  volume: 43
+  issue: 5
+  start: 6163
+  end: 6174
