@@ -146,6 +146,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-Made with 💚 in the name of sustainable AI &nbsp;|&nbsp; [Jorge Martinez-Gil](https://github.com/jorge-martinez-gil)
+Made in the name of sustainable AI &nbsp;|&nbsp; [Jorge Martinez-Gil](https://github.com/jorge-martinez-gil)
 
 </div>
